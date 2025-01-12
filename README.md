@@ -17,6 +17,8 @@ This repository contains the scripts, data, and resources used for the [CS412_Fi
     - Data Preparation : data cleaning, data mapping, TF-IDF feature extraction, and scaling.
     - Model Training: Implements XGBoost model training with hyperparameter tuning.
     - Evaluation: Includes model evaluation metrics like precision, recall, and F1-score.
+  
+  - 2 more notebooks that contain data processing tools, libraries and machine learning models that were unused in the final product
 
 - **`results/`**
   - Stores the experimental outputs, including figures, tables, and metrics.
@@ -77,6 +79,8 @@ Profile Data:
 Dropped irrelevant columns like URLs and contact information.
 Converted numerical and boolean columns into appropriate data types (e.g., int, float).
 Applied one-hot encoding to categorical features and extracted meaningful text features using TF-IDF vectorization for user biographies and captions.
+Tried models like BERT and FastText for more efficient word embedding-based classification. These models help improve the quality of predictions by capturing different aspects of the data. However, because of technical incapabilities we could not continue with these models.
+
 Scaled numerical features using Min-Max Scaling for better model performance.
 
 Post Data:
@@ -85,7 +89,7 @@ Engineered features like hour-by-like count interaction to reflect engagement pa
 Removed outliers in like count using interquartile range (IQR) adjustment.
 
 2. **Model Training**
-We trained the classification model using RandomForestClassifier from sklearn. Key parameters:
+After experimenting with multiple models, including Naive Bayes, linear, polynomial, and RBF SVM, as well as logistic regression, we trained the classification model using the RandomForestClassifier from scikit-learn. Key parameters:
 
 *Number of estimators: 100*
 Random state: 42 (for reproducibility)
@@ -199,6 +203,6 @@ The project achieved significant improvements in classification metrics, particu
 | [Metin ulaş Erdoğan]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
 | [Adahan Yiğitol]             | Visualization and results documentation, including confusion matrix and metrics.  |
 | [Barbaros Yahya]             | Repository structuring and integration of experimental findings into the report.  |
-| [İpek Öke]             | Model adjustments and enhancements.  |
+| [İpek Öke]             | Model development, feature engineering, data preprocessing and model evaluation and enhancements for classification.  |
 | [Damla Salman]             | Report construction and analysis.|
 
