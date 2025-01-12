@@ -45,6 +45,14 @@ This project follows a systematic approach to classify [user profiles by categor
      3. **Correlation of extended(^2, ^3, log) features**
         
       <img width="525" alt="Ekran Resmi 2025-01-12 19 14 22" src="https://github.com/user-attachments/assets/a36f4817-7ea3-4441-aaf2-d8d82143d910" />
+      
+    4. Check for outliers in the like count
+      <img width="598" alt="Ekran Resmi 2025-01-12 19 34 56" src="https://github.com/user-attachments/assets/40361fb3-3b0f-42cf-94a4-df5f653aa873" />
+    
+    5.Outliers removed by using Interquartile Range Adjustment
+    
+    <img width="652" alt="Ekran Resmi 2025-01-12 19 36 30" src="https://github.com/user-attachments/assets/8dbe3bc3-38a9-415a-8cf3-b4bd84fa3f1a" />
+
 
    - **PROFILE DATA:**
      1. Unnecessary columns such as url columns, contact information and name columns are dropped
@@ -57,22 +65,12 @@ This project follows a systematic approach to classify [user profiles by categor
      4. Categorical features are transformed using mapping and one-hot encoding.
         
      <img width="716" alt="Ekran Resmi 2025-01-12 19 16 23" src="https://github.com/user-attachments/assets/6714463e-d300-4395-863c-216cb9c15df8" />
+
      5. Extracted text features from user biographies and captions using TF-IDF.
         
      6. Scaled the dataset using MaxMin Scaler.
     
         
-
-
-#### **1. Loading the Data**
-The raw dataset is loaded into a Pandas DataFrame for preprocessing. The dataset includes the following columns:
-- `like_count`: Number of likes for a post.
-- `comments_count`: Number of comments for a post.
-- `hour`: The hour the post was created.
-- `category`: The category of the post.
-- `username`: The user who created the post.
-
-
 
 
 
