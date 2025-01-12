@@ -221,12 +221,8 @@ The project achieved significant improvements in classification metrics, particu
 
 ### **Tables**
 
-| **Category**           | **Precision** | **Recall** | **F1-Score** |
-|-------------------------|---------------|------------|--------------|
-| Art                    | 47%           | 21%        | 29%          |
-| Entertainment           | 31%           | 34%        | 32%          |
-| Food                   | 75%           | 91%        | 82%          |
-| Gaming                 | 0%            | 0%         | 0%           |
+![image](https://github.com/user-attachments/assets/38d06da4-8cf8-4cfa-8bec-23409c7043e2)
+
 
 ---
 
