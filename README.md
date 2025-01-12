@@ -74,16 +74,51 @@ This project follows a systematic approach to classify [user profiles by categor
 
 
 
+## **Model Development : Regression**
+This code offers several custom solutions for predicting like_count by insights derived from data.
 
-2. **Model Development**
-   - Used **XGBoost** as the primary classification algorithm due to its robustness with tabular data.
-   - Hyperparameter tuning via **GridSearchCV** to optimize performance.
+1. **Uses Historical Data for Predictions**
+The function calculates average like counts and average comment counts for a user’s past posts. This ensures predictions are personalized for each user based on their historical engagement metrics.
 
-3. **Evaluation**
+2. **Incorporates Hourly Impact**
+Hourly coefficients derived from the hour-by-like count correlation graph adjust the prediction. These coefficients capture trends where posts made during certain hours perform better or worse (e.g., posts during prime hours like 16:00-22:00 receive more likes).
+The hourly adjustment ensures that the prediction gets reward or penalty to its average like count according to the hour.
+
+Posts during hours like **16:00–22:00** perform better.
+Posts during non-peak hours like **3:00–7:00** perform worse.
+
+By incorporating these coefficients, the function directly leverages this insight, resulting in more accurate predictions based on the time of posting.
+
+4. **Penalizes Below-Average Engagement**
+If a post’s comment count is below the user’s average, a penalty is applied to the prediction. This accounts for the fact that lower-than-expected engagement (in terms of comments) is often correlated with fewer likes.
+
+
+5. **Logarithmic Adjustment for Comment Counts**
+The log_comments_count feature is used to account for the non-linear impact of comment counts on like counts. This transformation reduces the influence of outliers and models diminishing returns as comments increase. Even though it doesn't imply a strong connection, it is better than non logarithmic correlation. 
+<img width="633" alt="Ekran Resmi 2025-01-12 20 24 52" src="https://github.com/user-attachments/assets/f3325e20-2789-4e28-903d-2487137d3edf" />
+
+6. **Fallback for Missing Data**
+If information like the hour or comments_count is missing from the current_post, it retrieves this data from the user’s historical posts or the train_cleaned_profile_df. This ensures predictions are robust even in cases of incomplete data.
+
+### Why Heuristic-Based Approach Instead of a Machine Learning Model?
+
+This approach is straightforward and interpretable. Each adjustment is easy to understand and directly tied to specific patterns in the data. It doesn’t require extensive training or computational resources. It’s simpler to implement and debug while still leveraging important patterns in the data.
+
+The use of user-specific averages ensures that predictions are tailored to individual users, which is harder to achieve with general-purpose machine learning models without introducing complexity.
+
+Manually analyzing the correlation between features (e.g., hour vs. like count), allows  more targeted and meaningful adjustments than a machine learning model might capture without feature engineering.
+
+
+
+
+
+
+
+5. **Evaluation**
    - Measured precision, recall, F1-score, and overall accuracy for all categories.
    - Addressed class imbalance by carefully monitoring macro and weighted metrics.
 
-4. **Solutions Offered**
+6. **Solutions Offered**
    - Improved minority class predictions by using SMOTE and weighting in the model.
    - Provided a comprehensive analysis of feature importance to understand the model’s decisions.
 
