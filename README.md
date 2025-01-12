@@ -136,15 +136,6 @@ Observations: Performance varied across categories, indicating overfitting and a
 3. **Evaluation**
 The model was evaluated on both the training and validation datasets.
 
-3.1 *Training Data Results:*
-Accuracy: 99.7%
-Macro and Weighted Average F1-scores: 1.00
-Observations: The high performance on training data suggests overfitting.
-
-3.2 *Validation Data Results:*
-Accuracy: 59.2%
-Macro Average Precision: 52%
-Observations: Performance varied across categories, indicating overfitting and a need for better generalization.
 
 4. **Category-Wise Performance (Validation Data)**
 <img width="713" alt="Screenshot 2025-01-12 at 22 04 48" src="https://github.com/user-attachments/assets/11e3a178-b87b-4eec-8606-e6d6f78a0745" />
