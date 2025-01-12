@@ -176,11 +176,16 @@ Manually analyzing the correlation between features (e.g., hour vs. like count),
 ## **Results**
 The project achieved significant improvements in classification metrics, particularly for underrepresented classes. Below are the highlights:
 
+**Classification**
 - **Overall Accuracy**: 58%
 - **Macro Average Precision**: 56%
 - **Category-wise Performance**:
   - `food`: Precision: 75%, Recall: 91%, F1-score: 82%
   - `fashion`: Precision: 60%, Recall: 69%, F1-score: 64%
+
+**Regression**
+- **Overall Accuracy**: 0.59
+- **Log Mean Squared Error**: 1053.998574
 
 ### **Figures**
 ![Confusion Matrix](results/confusion_matrix.png)
