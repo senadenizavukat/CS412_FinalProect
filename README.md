@@ -231,10 +231,10 @@ Overall, these results emphasize the need for addressing class imbalance in the 
 
 | **Team Member**      | **Contributions**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------|
-| [Sena Deniz Avukat]             | Data preprocessing, feature engineering, and classification/like-prediction models.                |
+| [Sena Deniz Avukat]             | Data preprocessing, feature engineering, and classification/like-prediction model development and evaluation.                |
 | [Metin ulaş Erdoğan]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
 | [Adahan Yiğitol]             | Visualization and results documentation, including confusion matrix and metrics.  |
 | [Barbaros Yahya]             | Repository structuring and integration of experimental findings into the report.  |
-| [İpek Öke]             | Model development, feature engineering, data preprocessing and model evaluation and enhancements for classification (unused models 1 and 2).  |
+| [İpek Öke]             | Model development, feature engineering, and model evaluation and enhancements for classification (unused models 1 and 2).  |
 | [Damla Salman]             | Report construction and analysis.|
 
