@@ -75,25 +75,60 @@ This project follows a systematic approach to classify [user profiles by categor
 The classification component of the project focuses on categorizing user profiles into predefined categories using textual and numerical features extracted from profile metadata and posts. The key steps in this component are:
 
 1. **Data Preprocessing**
-Profile Data:
-Dropped irrelevant columns like URLs and contact information.
-Converted numerical and boolean columns into appropriate data types (e.g., int, float).
-Applied one-hot encoding to categorical features and extracted meaningful text features using TF-IDF vectorization for user biographies and captions.
-Tried models like BERT and FastText for more efficient word embedding-based classification. These models help improve the quality of predictions by capturing different aspects of the data. However, because of technical incapabilities we could not continue with these models.
 
-Scaled numerical features using Min-Max Scaling for better model performance.
+**Profile Data:**
 
-Post Data:
-Generated temporal features, such as hour, day of the week, and day of the month, to capture posting trends.
-Engineered features like hour-by-like count interaction to reflect engagement patterns.
-Removed outliers in like count using interquartile range (IQR) adjustment.
+  1. Feature Selection: Removed irrelevant columns such as URLs and contact information to avoid introducing noise into the model.
+  2. Data Type Conversion: Ensured that numerical and boolean columns were properly converted to their respective data types (e.g., int, float), facilitating seamless integration into the pipeline.
+  3. Textual Feature Extraction:
+  Used TF-IDF vectorization to extract textual features separately from user biographies and post captions.
+  This approach created a numerical representation of text data while preserving the importance of each term in the context of the document.
+  4. Data Mapping and Encoding:
+  Mapped metadata such as user activities or preferences to meaningful numerical categories.
+  Applied one-hot encoding to categorical features, enabling the model to process these variables effectively.
+  5. Feature Scaling: Normalized numerical features using Min-Max Scaling to align their values within the same range, improving model convergence      and prediction consistency.
+  
+2. **Feature Merging**
+  1. Textual Feature Integration:
+  Combined the TF-IDF matrices for user biographies and captions into a single feature matrix. This ensured that textual information from both       sources was jointly utilized for classification.
+  2. Unified Dataset Creation:
+  Merged the combined TF-IDF matrix with encoded metadata and numerical features to create a holistic representation of the data.
+  Feature selection through correlation analysis ensured that only the most impactful features were retained, reducing dimensionality and improving     computational efficiency.
+
+**Correlation Analysis:** Encoded features show higher correlation compared to other features. 
+
+<img width="403" alt="Ekran Resmi 2025-01-12 23 05 52" src="https://github.com/user-attachments/assets/959e6706-ee7f-495d-9df0-919eb01e9990" />
+
+Correlation Analysis of Merged DataFrame: 
+
+<img width="387" alt="Ekran Resmi 2025-01-12 23 07 26" src="https://github.com/user-attachments/assets/47f7cdf8-9e9d-4636-b070-3c7426f3bcfd" />
+
 
 2. **Model Training**
-After experimenting with multiple models, including Naive Bayes, linear, polynomial, and RBF SVM, as well as logistic regression, we trained the classification model using the RandomForestClassifier from scikit-learn. Key parameters:
 
-*Number of estimators: 100*
-Random state: 42 (for reproducibility)
-The model was trained on TF-IDF transformed text data and numerical features.
+  - Initialized the Multinomial Naive Bayes model:
+
+  - To optimize the model's performance, conducted a Grid Search over the alpha parameter (smoothing parameter):
+
+  <img width="452" alt="Ekran Resmi 2025-01-12 23 13 20" src="https://github.com/user-attachments/assets/7a12d209-6ec7-427f-a133-d7d45c5246e9" />
+  
+  - The grid search identified the optimal alpha parameter, ensuring the best trade-off between overfitting and underfitting:
+
+
+
+
+3. **Evaluation**
+The model was evaluated on both the training and validation datasets.
+
+3.1 *Training Data Results:*
+Accuracy: 99.7%
+Macro and Weighted Average F1-scores: 1.00
+Observations: The high performance on training data suggests overfitting.
+
+3.2 *Validation Data Results:*
+Accuracy: 59.2%
+Macro Average Precision: 52%
+Observations: Performance varied across categories, indicating overfitting and a need for better generalization.
 
 3. **Evaluation**
 The model was evaluated on both the training and validation datasets.
