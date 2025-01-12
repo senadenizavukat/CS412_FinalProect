@@ -11,14 +11,12 @@ This repository contains the scripts, data, and resources used for the [CS412_Fi
       - **Most Recent Posts**: The 36 most recent posts for each account, used to extract features for classification.
     - `test-classification-roundx.dat`: Test data for each round.
 
-- **`src/`**
-  - Includes 3 main parts of the project.
+
+- **`notebooks/`**
+  - Jupyter notebook that contains:
     - Data Preparation : data cleaning, data mapping, TF-IDF feature extraction, and scaling.
     - Model Training: Implements XGBoost model training with hyperparameter tuning.
     - Evaluation: Includes model evaluation metrics like precision, recall, and F1-score.
-
-- **`notebooks/`**
-  - Jupyter notebooks for exploratory data analysis (EDA) and experimentation.
 
 - **`results/`**
   - Stores the experimental outputs, including figures, tables, and metrics.
