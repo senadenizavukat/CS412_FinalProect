@@ -71,6 +71,7 @@ This project follows a systematic approach to classify [user profiles by categor
      6. Scaled the dataset using MaxMin Scaler.
     
         
+## **Model Development : Classification**
 
 
 
