@@ -68,7 +68,11 @@ print(data.head())
    - Provided a comprehensive analysis of feature importance to understand the model’s decisions.
 
 ---
-![Data Cleaning Process](images/data_cleaning.png "Data Cleaning Steps")
+![Data Cleaning Process](images/Ekran Resmi 2025-01-12 18.21.16.png?raw=true)
+
+<img width="534" alt="Ekran Resmi 2025-01-12 18 25 17" src="https://github.com/user-attachments/assets/f12a36b0-988c-488a-b1d4-ce8523e4f383" />
+
+
 
 ## **Results**
 The project achieved significant improvements in classification metrics, particularly for underrepresented classes. Below are the highlights:
