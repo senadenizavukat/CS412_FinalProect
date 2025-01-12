@@ -46,12 +46,12 @@ This project follows a systematic approach to classify [user profiles by categor
         
       <img width="525" alt="Ekran Resmi 2025-01-12 19 14 22" src="https://github.com/user-attachments/assets/a36f4817-7ea3-4441-aaf2-d8d82143d910" />
       
-    4. Check for outliers in the like count
+     4. **Check for outliers in the like count**
       <img width="598" alt="Ekran Resmi 2025-01-12 19 34 56" src="https://github.com/user-attachments/assets/40361fb3-3b0f-42cf-94a4-df5f653aa873" />
     
-    5.Outliers removed by using Interquartile Range Adjustment
+     5. **Outliers removed by using Interquartile Range Adjustment**
     
-    <img width="652" alt="Ekran Resmi 2025-01-12 19 36 30" src="https://github.com/user-attachments/assets/8dbe3bc3-38a9-415a-8cf3-b4bd84fa3f1a" />
+      <img width="652" alt="Ekran Resmi 2025-01-12 19 36 30" src="https://github.com/user-attachments/assets/8dbe3bc3-38a9-415a-8cf3-b4bd84fa3f1a" />
 
 
    - **PROFILE DATA:**
