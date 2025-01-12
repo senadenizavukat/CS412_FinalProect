@@ -28,14 +28,41 @@ This repository contains the scripts, data, and resources used for the [CS412_Fi
 
 ---
 
+
 ## **Methodology**
 This project follows a systematic approach to classify [user profiles by category]. Key steps include:
 
-1. **Data Preprocessing**
-   - Handled missing values and transformed categorical features using one-hot encoding.
-   - Extracted text features from user biographies and captions using TF-IDF.
-   - Balanced the dataset using SMOTE to address class imbalance issues.
-### **Steps in Data Cleaning**
+### **Data Preprocessing**
+   - **POST DATA:**
+     1. **Timestamp is turned into Hour - Month Day - Week Day**
+        
+     <img width="765" alt="Ekran Resmi 2025-01-12 18 30 13" src="https://github.com/user-attachments/assets/ecbe4a00-adc4-4841-9fe4-7b681c5d5724" />
+
+     2. **Hours/Like Count interaction**
+        
+     <img width="897" alt="Ekran Resmi 2025-01-12 18 33 52" src="https://github.com/user-attachments/assets/79794b64-23a6-40c9-b01e-04b7ccd811ee" />
+
+     3. **Correlation of extended(^2, ^3, log) features**
+        
+      <img width="525" alt="Ekran Resmi 2025-01-12 19 14 22" src="https://github.com/user-attachments/assets/a36f4817-7ea3-4441-aaf2-d8d82143d910" />
+
+   - **PROFILE DATA:**
+     1. Unnecessary columns such as url columns, contact information and name columns are dropped
+        
+     2. Columns with single unique value are dropped
+      <img width="933" alt="Ekran Resmi 2025-01-12 19 21 53" src="https://github.com/user-attachments/assets/9ff60222-ddf6-4be3-afb0-3d73800e6090" />
+
+     3.  Numerical and Boolean Columns are turned from object datatype into int and float datatypes
+        
+     4. Categorical features are transformed using mapping and one-hot encoding.
+        
+     <img width="716" alt="Ekran Resmi 2025-01-12 19 16 23" src="https://github.com/user-attachments/assets/6714463e-d300-4395-863c-216cb9c15df8" />
+     5. Extracted text features from user biographies and captions using TF-IDF.
+        
+     6. Scaled the dataset using MaxMin Scaler.
+    
+        
+
 
 #### **1. Loading the Data**
 The raw dataset is loaded into a Pandas DataFrame for preprocessing. The dataset includes the following columns:
@@ -45,16 +72,11 @@ The raw dataset is loaded into a Pandas DataFrame for preprocessing. The dataset
 - `category`: The category of the post.
 - `username`: The user who created the post.
 
-**Script**:
-```python
-import pandas as pd
 
-# Load the dataset
-raw_data_path = "path_to_dataset.csv"
-data = pd.read_csv(raw_data_path)
 
-# Display the first few rows
-print(data.head())
+
+
+
 2. **Model Development**
    - Used **XGBoost** as the primary classification algorithm due to its robustness with tabular data.
    - Hyperparameter tuning via **GridSearchCV** to optimize performance.
@@ -70,7 +92,6 @@ print(data.head())
 ---
 ![Data Cleaning Process](images/Ekran Resmi 2025-01-12 18.21.16.png?raw=true)
 
-<img width="534" alt="Ekran Resmi 2025-01-12 18 25 17" src="https://github.com/user-attachments/assets/f12a36b0-988c-488a-b1d4-ce8523e4f383" />
 
 
 
