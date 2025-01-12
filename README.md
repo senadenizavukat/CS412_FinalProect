@@ -83,10 +83,11 @@ The classification component of the project focuses on categorizing user profile
   3. Textual Feature Extraction:
   Used TF-IDF vectorization to extract textual features separately from user biographies and post captions.
   This approach created a numerical representation of text data while preserving the importance of each term in the context of the document.
-  4. Data Mapping and Encoding:
+  Tried models like BERT and FastText for more efficient word embedding-based classification. These models help improve the quality of predictions by capturing different aspects of the data. However, because of technical incapabilities we could not continue with these models.
+  5. Data Mapping and Encoding:
   Mapped metadata such as user activities or preferences to meaningful numerical categories.
   Applied one-hot encoding to categorical features, enabling the model to process these variables effectively.
-  5. Feature Scaling: Normalized numerical features using Min-Max Scaling to align their values within the same range, improving model convergence      and prediction consistency.
+  6. Feature Scaling: Normalized numerical features using Min-Max Scaling to align their values within the same range, improving model convergence      and prediction consistency.
   
 2. **Feature Merging**
   1. Textual Feature Integration:
@@ -106,7 +107,7 @@ Correlation Analysis of Merged DataFrame:
 
 2. **Model Training**
 
-  - Initialized the Multinomial Naive Bayes model:
+  - After experimenting with multiple models, including Naive Bayes, linear, polynomial, and RBF SVM, as well as logistic regression, we trained the classification model using the RandomForestClassifier from scikit-learn. To optimize the performance of the Multinomial Naive Bayes model, we conducted a Grid Search over the alpha parameter (smoothing parameter). The grid search identified the optimal alpha, ensuring the best trade-off between overfitting and underfitting, as shown below:
 
   - To optimize the model's performance, conducted a Grid Search over the alpha parameter (smoothing parameter):
 
