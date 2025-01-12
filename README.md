@@ -70,6 +70,52 @@ This project follows a systematic approach to classify [user profiles by categor
     
         
 ## **Model Development : Classification**
+The classification component of the project focuses on categorizing user profiles into predefined categories using textual and numerical features extracted from profile metadata and posts. The key steps in this component are:
+
+1. **Data Preprocessing**
+Profile Data:
+Dropped irrelevant columns like URLs and contact information.
+Converted numerical and boolean columns into appropriate data types (e.g., int, float).
+Applied one-hot encoding to categorical features and extracted meaningful text features using TF-IDF vectorization for user biographies and captions.
+Scaled numerical features using Min-Max Scaling for better model performance.
+
+Post Data:
+Generated temporal features, such as hour, day of the week, and day of the month, to capture posting trends.
+Engineered features like hour-by-like count interaction to reflect engagement patterns.
+Removed outliers in like count using interquartile range (IQR) adjustment.
+
+2. **Model Training**
+We trained the classification model using RandomForestClassifier from sklearn. Key parameters:
+
+*Number of estimators: 100*
+Random state: 42 (for reproducibility)
+The model was trained on TF-IDF transformed text data and numerical features.
+
+3. **Evaluation**
+The model was evaluated on both the training and validation datasets.
+
+3.1 *Training Data Results:*
+Accuracy: 99.7%
+Macro and Weighted Average F1-scores: 1.00
+Observations: The high performance on training data suggests overfitting.
+
+3.2 *Validation Data Results:*
+Accuracy: 59.2%
+Macro Average Precision: 52%
+Observations: Performance varied across categories, indicating overfitting and a need for better generalization.
+
+4. **Category-Wise Performance (Validation Data)**
+<img width="713" alt="Screenshot 2025-01-12 at 22 04 48" src="https://github.com/user-attachments/assets/11e3a178-b87b-4eec-8606-e6d6f78a0745" />
+
+5. **Test Data Prediction**
+The trained model was applied to test data. Text features were transformed using the trained TF-IDF vectorizer, and predictions were generated for each profile.
+Outputs were saved in a JSON file for further analysis.
+
+6. **Challenges and Solutions**
+Overfitting: Observed high accuracy on training data but relatively low generalization on validation data.
+Solution: Implemented hyperparameter tuning (e.g., adjusting max_depth, min_samples_split) and explored ensemble methods.
+Imbalanced Classes: Addressed using techniques like SMOTE to oversample minority classes.
+
 
 
 
