@@ -223,6 +223,8 @@ The project achieved significant improvements in classification metrics, particu
 
 ![image](https://github.com/user-attachments/assets/38d06da4-8cf8-4cfa-8bec-23409c7043e2)
 
+As shown above, the classes having more samples in the training dataset performed better than classes not having lower amounts of inputs
+
 
 ---
 
