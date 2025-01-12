@@ -235,6 +235,6 @@ Overall, these results emphasize the need for addressing class imbalance in the 
 | [Metin ulaş Erdoğan]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
 | [Adahan Yiğitol]             | Visualization and results documentation, including confusion matrix and metrics.  |
 | [Barbaros Yahya]             | Repository structuring and integration of experimental findings into the report.  |
-| [İpek Öke]             | Model development, feature engineering, data preprocessing and model evaluation and enhancements for classification.  |
+| [İpek Öke]             | Model development, feature engineering, data preprocessing and model evaluation and enhancements for classification (unused models 1 and 2).  |
 | [Damla Salman]             | Report construction and analysis.|
 
