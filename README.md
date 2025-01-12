@@ -42,6 +42,8 @@ This project follows a systematic approach to classify [user profiles by categor
         
      <img width="897" alt="Ekran Resmi 2025-01-12 18 33 52" src="https://github.com/user-attachments/assets/79794b64-23a6-40c9-b01e-04b7ccd811ee" />
 
+      <img width="994" alt="Ekran Resmi 2025-01-12 23 35 49" src="https://github.com/user-attachments/assets/957c8f7c-e75b-4f10-8824-0870c3133fea" />
+
      3. **Correlation of extended(^2, ^3, log) features**
         
       <img width="525" alt="Ekran Resmi 2025-01-12 19 14 22" src="https://github.com/user-attachments/assets/a36f4817-7ea3-4441-aaf2-d8d82143d910" />
