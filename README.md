@@ -223,7 +223,12 @@ The project achieved significant improvements in classification metrics, particu
 
 ![image](https://github.com/user-attachments/assets/38d06da4-8cf8-4cfa-8bec-23409c7043e2)
 
-As shown above, the classes having more samples in the training dataset performed better than classes not having lower amounts of inputs
+
+The classification results shown in the above screenshot highlight the significant impact of data distribution on model performance. Classes with a higher number of samples in the training dataset, such as "fashion," "gaming," and "health and lifestyle," performed markedly better in terms of precision, recall, and F1-score. This trend is evident from their higher metrics across the board, indicating that the model could effectively learn patterns and generalize well for these classes.
+
+In contrast, classes with fewer samples, such as "art" and "entertainment," exhibited poorer performance, particularly in the validation set. The metrics for these underrepresented classes, especially recall and F1-score, were substantially lower, indicating difficulty in predicting these categories correctly. This discrepancy can be attributed to the imbalance in the dataset, where limited training examples for certain classes constrain the model's ability to recognize their distinct patterns.
+
+Overall, these results emphasize the need for addressing class imbalance in the dataset to improve the performance of minority classes. Potential solutions include oversampling underrepresented classes, undersampling dominant classes, or using class weights during model training to ensure more equitable representation and better generalization across all categories.
 
 
 ---
