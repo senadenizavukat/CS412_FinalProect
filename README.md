@@ -1,21 +1,21 @@
 # CS412_FinalProect
-# **Project Title**: [Your Project Name]
 
 ## **Overview of the Repository**
-This repository contains the scripts, data, and resources used for the [project name]. The project focuses on [brief description of the project’s goal or purpose].
+This repository contains the scripts, data, and resources used for the [CS412_FinalProect]. The project focuses on [category classification of the profile] and [like-count prediction oer post].
 
 ### **Repository Structure**
 - **`data/`**
   - Contains the datasets used for training and testing.
-  - Example:
     - `training-dataset.jsonl.gz`: Training data.
-    - `test-classification-round1.dat`: Test data.
+      - **Profile Meta-Data**: Metadata for each account, including follower count, biography, and other account details.
+      - **Most Recent Posts**: The 36 most recent posts for each account, used to extract features for classification.
+    - `test-classification-roundx.dat`: Test data for each round.
 
 - **`src/`**
-  - Core scripts used for the project.
-    - `data_preprocessing.py`: Handles data cleaning, TF-IDF feature extraction, and SMOTE-based oversampling.
-    - `model_training.py`: Implements XGBoost model training with hyperparameter tuning.
-    - `evaluation.py`: Includes model evaluation metrics like precision, recall, and F1-score.
+  - Includes 3 main parts of the project.
+    - Data Preparation : data cleaning, data mapping, TF-IDF feature extraction, and scaling.
+    - Model Training: Implements XGBoost model training with hyperparameter tuning.
+    - Evaluation: Includes model evaluation metrics like precision, recall, and F1-score.
 
 - **`notebooks/`**
   - Jupyter notebooks for exploratory data analysis (EDA) and experimentation.
@@ -29,13 +29,32 @@ This repository contains the scripts, data, and resources used for the [project 
 ---
 
 ## **Methodology**
-This project follows a systematic approach to classify [project-specific task or problem, e.g., user posts by category]. Key steps include:
+This project follows a systematic approach to classify [user profiles by category]. Key steps include:
 
 1. **Data Preprocessing**
    - Handled missing values and transformed categorical features using one-hot encoding.
    - Extracted text features from user biographies and captions using TF-IDF.
    - Balanced the dataset using SMOTE to address class imbalance issues.
+### **Steps in Data Cleaning**
 
+#### **1. Loading the Data**
+The raw dataset is loaded into a Pandas DataFrame for preprocessing. The dataset includes the following columns:
+- `like_count`: Number of likes for a post.
+- `comments_count`: Number of comments for a post.
+- `hour`: The hour the post was created.
+- `category`: The category of the post.
+- `username`: The user who created the post.
+
+**Script**:
+```python
+import pandas as pd
+
+# Load the dataset
+raw_data_path = "path_to_dataset.csv"
+data = pd.read_csv(raw_data_path)
+
+# Display the first few rows
+print(data.head())
 2. **Model Development**
    - Used **XGBoost** as the primary classification algorithm due to its robustness with tabular data.
    - Hyperparameter tuning via **GridSearchCV** to optimize performance.
@@ -49,6 +68,7 @@ This project follows a systematic approach to classify [project-specific task or
    - Provided a comprehensive analysis of feature importance to understand the model’s decisions.
 
 ---
+![Data Cleaning Process](images/data_cleaning.png "Data Cleaning Steps")
 
 ## **Results**
 The project achieved significant improvements in classification metrics, particularly for underrepresented classes. Below are the highlights:
