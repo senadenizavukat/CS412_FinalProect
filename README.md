@@ -1,4 +1,4 @@
-# CS412_FinalProect
+# CS412_FinalProject
 
 ## **Overview of the Repository**
 This repository contains the scripts, data, and resources used for the [CS412_FinalProect]. The project focuses on [category classification of the profile] and [like-count prediction oer post].
@@ -205,8 +205,10 @@ The project achieved significant improvements in classification metrics, particu
 
 | **Team Member**      | **Contributions**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------|
-| [Name 1]             | Data preprocessing, feature engineering, and SMOTE implementation.                |
-| [Name 2]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
-| [Name 3]             | Visualization and results documentation, including confusion matrix and metrics.  |
-| [Name 4]             | Repository structuring and integration of experimental findings into the report.  |
+| [Sena Deniz Avukat]             | Data preprocessing, feature engineering, and SMOTE implementation.                |
+| [Metin ulaş Erdoğan]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
+| [Adahan Yiğitol]             | Visualization and results documentation, including confusion matrix and metrics.  |
+| [Barbaros Yahya]             | Repository structuring and integration of experimental findings into the report.  |
+| [İpek Öke]             | Model adjustments and enhancements.  |
+| [Damla Salman]             | Report construction and analysis.|
 
