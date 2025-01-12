@@ -159,16 +159,6 @@ Manually analyzing the correlation between features (e.g., hour vs. like count),
 
 
 
-5. **Evaluation**
-   - Measured precision, recall, F1-score, and overall accuracy for all categories.
-   - Addressed class imbalance by carefully monitoring macro and weighted metrics.
-
-6. **Solutions Offered**
-   - Improved minority class predictions by using SMOTE and weighting in the model.
-   - Provided a comprehensive analysis of feature importance to understand the model’s decisions.
-
----
-![Data Cleaning Process](images/Ekran Resmi 2025-01-12 18.21.16.png?raw=true)
 
 
 
@@ -205,7 +195,7 @@ The project achieved significant improvements in classification metrics, particu
 
 | **Team Member**      | **Contributions**                                                                 |
 |-----------------------|-----------------------------------------------------------------------------------|
-| [Sena Deniz Avukat]             | Data preprocessing, feature engineering, and SMOTE implementation.                |
+| [Sena Deniz Avukat]             | Data preprocessing, feature engineering, and classification/like-prediction models.                |
 | [Metin ulaş Erdoğan]             | Model development, hyperparameter tuning with GridSearchCV, and model evaluation. |
 | [Adahan Yiğitol]             | Visualization and results documentation, including confusion matrix and metrics.  |
 | [Barbaros Yahya]             | Repository structuring and integration of experimental findings into the report.  |
